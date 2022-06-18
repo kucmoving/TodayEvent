@@ -9,5 +9,6 @@ namespace Event_API_.Data
         {
         }
         public DbSet<Category> Categories { get; set; }
+        public object Category { get; internal set; }
     }
 }

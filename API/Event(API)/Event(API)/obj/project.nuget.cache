@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/LtDL8J/fWiLUZ7TCiWqXNeUXYTEhMZIMDLTVsvdTR2zlumKHiTbfDGW8Al4RNeRILBeuFtFI8MW+oJ9Y+v5ww==",
+  "dgSpecHash": "+ZGE22G5xC7OgBtiGTdjWJcGH/YccAEf6Lmt98lhTNa0lIA8TjHnQWNVk6RhPEj4EgYw2xoFlk67/Dw9P2LCPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kuc\\Desktop\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj",
+  "projectFilePath": "C:\\Users\\kuc\\Source\\Repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kuc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kuc\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.6\\microsoft.aspnetcore.authentication.jwtbearer.6.0.6.nupkg.sha512",

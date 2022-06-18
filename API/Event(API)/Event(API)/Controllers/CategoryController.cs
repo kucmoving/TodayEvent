@@ -1,6 +1,8 @@
-﻿using Event_API_.Model;
+﻿using Event_API_.Data;
+using Event_API_.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Event_API_.Controllers
 {
@@ -10,10 +12,13 @@ namespace Event_API_.Controllers
     {
 
         private readonly ILogger<GenresController> logger;
+        private readonly DataContext _dataContext;
 
-        public GenresController(ILogger<GenresController> logger)
+        public GenresController(ILogger<GenresController> logger,
+            DataContext dataContext)
         {
             this.logger = logger;
+            _dataContext = dataContext;
         }
 
         [HttpGet]
@@ -21,8 +26,7 @@ namespace Event_API_.Controllers
         public async Task<ActionResult<List<Category>>> Get()
         {
             logger.LogInformation("Getting all the genres");
-
-            return new List<Category>() { new Category() { Id = 1, Name = "Sport" } };
+            return await _dataContext.Categories.ToListAsync();
 
         }
 
@@ -34,9 +38,11 @@ namespace Event_API_.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Category genre)
+        public async Task<ActionResult> Post([FromBody] Category category)
         {
-            throw new NotImplementedException();
+            _dataContext.Add(category);                   // add in memory
+            await _dataContext.SaveChangesAsync(); //save
+            return NoContent();
         }
 
         [HttpPut]

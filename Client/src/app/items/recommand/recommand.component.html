@@ -1,0 +1,6 @@
+<mat-icon *ngFor="let i of markArray; let index = index"
+(mouseenter)="handleMouseEnter(index)"
+(mouseleave)="handleMouseLeave()"
+(click)="mark(index)"
+  [ngClass]="{checked: selectedMark > index}">favorite_border</mat-icon>
+

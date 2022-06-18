@@ -1,0 +1,29 @@
+.event-container {
+  margin-right: 2%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.events-container{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:warp;
+  align-items:center;
+}
+
+p{
+  max-width:225px;
+  height: 44px;
+  font-size:15px;
+  font-weight:bold;
+}
+
+img {
+  width:225px;
+  height:300px;
+}
+
+button{
+  margin-left:1em;
+}
+
