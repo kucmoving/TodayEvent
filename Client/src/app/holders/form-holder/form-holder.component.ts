@@ -11,7 +11,7 @@ export class FormHolderComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) { }
   form:any = FormGroup;
-  @Output() saveEmit = new EventEmitter<newHolderDTO>();
+  @Output() onSaveChanges = new EventEmitter<newHolderDTO>();
 
   @Input()
   model: any;
@@ -22,16 +22,25 @@ export class FormHolderComponent implements OnInit {
       name:['',{
         validators: [Validators.required]
       }],
-      startingDate:''
+      startingDate:'',
+      picture:'',
+      introduction:''
     });
     if (this.model !== undefined){
       this.form.patchValue(this.model);
     }
 
   }
+  OnImageSelected(image: any){
+    this.form.get('picture').setValue(image);
+  }
+
+  onSaveChange(content: any){
+    this.form.get("introduction").setValue(content);
+  }
 
   save(){
-    this.saveEmit.emit(this.form.value);
+    this.onSaveChanges.emit(this.form.value);
   }
 
 }

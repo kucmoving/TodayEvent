@@ -24,7 +24,9 @@ import { IndexHoldersComponent } from './holders/index-holders/index-holders.com
 import { NewHoldersComponent } from './holders/new-holders/new-holders.component';
 import { EditHolderComponent } from './holders/edit-holder/edit-holder.component';
 import { FormHolderComponent } from './holders/form-holder/form-holder.component';
-
+import { InputImgComponent } from './items/input-img/input-img.component';
+import { InputMarkdownComponent } from './items/input-markdown/input-markdown.component';
+import { FormCategoryComponent } from './category/form-category/form-category.component';
 
 
 
@@ -49,6 +51,9 @@ import { FormHolderComponent } from './holders/form-holder/form-holder.component
     EditEventComponent,
     EventFilterComponent,
     FormHolderComponent,
+    InputImgComponent,
+    InputMarkdownComponent,
+    FormCategoryComponent,
 
   ],
   imports: [
@@ -59,8 +64,6 @@ import { FormHolderComponent } from './holders/form-holder/form-holder.component
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

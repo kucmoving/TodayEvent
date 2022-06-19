@@ -8,7 +8,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditHolderComponent implements OnInit {
 
-  model: any = {name: "SPCA", startingDate: new Date()}
+  model: any = {name: "SPCA",
+  startingDate: new Date(),
+picture:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/SPCA.jpg/440px-SPCA.jpg"}
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

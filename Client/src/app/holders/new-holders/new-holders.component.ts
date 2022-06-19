@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { newHolderDTO } from 'src/app/_model/newHolderDTO';
 
 @Component({
@@ -8,13 +9,15 @@ import { newHolderDTO } from 'src/app/_model/newHolderDTO';
 })
 export class NewHoldersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   saveChange(newHolderDTO: newHolderDTO){
     console.log(newHolderDTO);
+    this.router.navigate(['/holder']);
+
 
   }
 
