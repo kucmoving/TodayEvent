@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { EventsListComponent } from './events/events-list/events-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,15 +12,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { IndexCategoryComponent } from './category/index-category/index-category.component';
 import { NewCategoryComponent } from './category/new-category/new-category.component';
-import { IndexHoldersComponent } from './actors/index-holders/index-holders.component';
-import { NewHoldersComponent } from './actors/new-holders/new-holders.component';
 import { IndexEventLocationComponent } from './event-location/index-event-location/index-event-location.component';
 import { NewEventLocationComponent } from './event-location/new-event-location/new-event-location.component';
 import { NewEventComponent } from './events/new-event/new-event.component';
-import { EditHolderComponent } from './holder/edit-holder/edit-holder.component';
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
 import { EditEventLocationComponent } from './event-location/edit-event-location/edit-event-location.component';
 import { EditEventComponent } from './events/edit-event/edit-event.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventFilterComponent } from './events/event-filter/event-filter.component';
+import { IndexHoldersComponent } from './holders/index-holders/index-holders.component';
+import { NewHoldersComponent } from './holders/new-holders/new-holders.component';
+import { EditHolderComponent } from './holders/edit-holder/edit-holder.component';
+import { FormHolderComponent } from './holders/form-holder/form-holder.component';
+
+
 
 
 @NgModule({
@@ -42,7 +46,10 @@ import { EditEventComponent } from './events/edit-event/edit-event.component';
     EditHolderComponent,
     EditCategoryComponent,
     EditEventLocationComponent,
-    EditEventComponent
+    EditEventComponent,
+    EventFilterComponent,
+    FormHolderComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -50,6 +57,10 @@ import { EditEventComponent } from './events/edit-event/edit-event.component';
     MaterialModule,
     MatIconModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

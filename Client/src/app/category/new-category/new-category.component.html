@@ -1,5 +1,17 @@
-<h2>
-  New event
-  </h2>
+<h1>
+  Create Category
+</h1>
 
-  <button mat-flat-button color="primary" type="button" (click)="saveChanges()">Save Changes</button>
+<form (submit)="saveChanges()" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Name*</mat-label>
+    <input formControlName="name" matInput/> <!--to link form attribute in new-event.ts-->
+    <mat-error *ngIf="form.invalid">{{getErrorMessageFieldName()}}</mat-error>
+  </mat-form-field>
+  <div>
+    <button mat-flat-button color="primary" [disabled]="form.invalid">Save Changes</button>
+    <a mat-stroked-button router="/category">Maybe Later</a>
+  </div>
+
+</form>
+

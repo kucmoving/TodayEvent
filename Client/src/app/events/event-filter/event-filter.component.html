@@ -1,0 +1,31 @@
+<p>event-filter works!</p>
+
+<form [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input formControlName="title" matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="categoryId">
+      <mat-option [value]="'1'">Sport</mat-option>
+      <mat-option [value]="'2'">Society</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <mat-checkbox formControlName="coming">Coming</mat-checkbox>
+  </div>
+
+  <div>
+    <mat-checkbox formControlName="location">Location</mat-checkbox>
+  </div>
+
+  <div class="reset-container">
+    <button mat-flat-button (click)="resetForm()" color="warn">Reset</button>
+  </div>
+
+</form>
+
+<app-events-list [events]="events"></app-events-list>

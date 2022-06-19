@@ -8,12 +8,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditHolderComponent implements OnInit {
 
+  model: any = {name: "SPCA", startingDate: new Date()}
+
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
 
     })
+  }
+
+    save(holderChange:any){
+    console.log(holderChange);
   }
 
 }

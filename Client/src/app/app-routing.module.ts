@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IndexHoldersComponent } from './actors/index-holders/index-holders.component';
-import { NewHoldersComponent } from './actors/new-holders/new-holders.component';
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
 import { IndexCategoryComponent } from './category/index-category/index-category.component';
 import { NewCategoryComponent } from './category/new-category/new-category.component';
@@ -9,8 +7,11 @@ import { EditEventLocationComponent } from './event-location/edit-event-location
 import { IndexEventLocationComponent } from './event-location/index-event-location/index-event-location.component';
 import { NewEventLocationComponent } from './event-location/new-event-location/new-event-location.component';
 import { EditEventComponent } from './events/edit-event/edit-event.component';
+import { EventFilterComponent } from './events/event-filter/event-filter.component';
 import { NewEventComponent } from './events/new-event/new-event.component';
-import { EditHolderComponent } from './holder/edit-holder/edit-holder.component';
+import { EditHolderComponent } from './holders/edit-holder/edit-holder.component';
+import { IndexHoldersComponent } from './holders/index-holders/index-holders.component';
+import { NewHoldersComponent } from './holders/new-holders/new-holders.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -32,8 +33,10 @@ const routes: Routes = [
 
   { path:'events/new', component: NewEventComponent},
   { path:'events/edit/:id', component: EditEventComponent},
+  { path:'events/filter', component: EventFilterComponent},
 
-  { path:"**", component: HomeComponent}
+
+  { path:"**", component: HomeComponent},
   //{path: "**", redirectTo: ""}
 
 ];
