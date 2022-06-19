@@ -54,7 +54,6 @@ import { FormCategoryComponent } from './category/form-category/form-category.co
     InputImgComponent,
     InputMarkdownComponent,
     FormCategoryComponent,
-
   ],
   imports: [
     BrowserModule,

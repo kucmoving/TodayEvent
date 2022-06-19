@@ -16,10 +16,16 @@
     <a mat-stroked-button routerLink="/holder">Return</a>
   </div>
 
+  <H4>select picture
+  </H4>
+
   <app-input-img
   [urlCurrentImage]="model?.picture" (OnImageSelected)="OnImageSelected($event)"></app-input-img>
 
-<app-input-markdown (changeMarkDown)="changeMarkDown($event)"></app-input-markdown>
+  <H4>Introduction
+  </H4>
+
+<app-input-markdown></app-input-markdown>
 <div>
   <button mat-flat-button color="primary" [disabled]="form.invalid">Save Changes</button>
   <a mat-stroked-button routerLink="/holder">Return</a>
