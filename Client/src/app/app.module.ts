@@ -30,6 +30,9 @@ import { FormCategoryComponent } from './category/form-category/form-category.co
 import { LocationFormComponent } from './event-location/location-form/location-form.component';
 import { LeafletModule} from '@asymmetrik/ngx-leaflet'
 import { MapComponent } from './items/map/map.component';
+import { FormEventComponent } from './events/form-event/form-event.component';
+import { MultipleSelectorComponent } from './items/multiple-selector/multiple-selector.component';
+import { HolderAutocompleteComponent } from './holder/holder-autocomplete/holder-autocomplete.component';
 
 
 @NgModule({
@@ -57,7 +60,11 @@ import { MapComponent } from './items/map/map.component';
     InputMarkdownComponent,
     FormCategoryComponent,
     LocationFormComponent,
-    MapComponent
+    MapComponent,
+    FormEventComponent,
+    MultipleSelectorComponent,
+    HolderAutocompleteComponent,
+
   ],
   imports: [
     BrowserModule,
