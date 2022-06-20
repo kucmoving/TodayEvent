@@ -27,7 +27,9 @@ import { FormHolderComponent } from './holders/form-holder/form-holder.component
 import { InputImgComponent } from './items/input-img/input-img.component';
 import { InputMarkdownComponent } from './items/input-markdown/input-markdown.component';
 import { FormCategoryComponent } from './category/form-category/form-category.component';
-
+import { LocationFormComponent } from './event-location/location-form/location-form.component';
+import { LeafletModule} from '@asymmetrik/ngx-leaflet'
+import { MapComponent } from './items/map/map.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { FormCategoryComponent } from './category/form-category/form-category.co
     InputImgComponent,
     InputMarkdownComponent,
     FormCategoryComponent,
+    LocationFormComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,7 @@ import { FormCategoryComponent } from './category/form-category/form-category.co
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]

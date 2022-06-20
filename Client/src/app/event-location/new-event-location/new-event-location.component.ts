@@ -12,4 +12,8 @@ export class NewEventLocationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  saveChanges(eventLocation:any){
+    console.log(eventLocation);
+  }
+
 }
