@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kuc\\Source\\Repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj": {}
+    "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj": {}
   },
   "projects": {
-    "C:\\Users\\kuc\\Source\\Repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj": {
+    "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kuc\\Source\\Repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj",
+        "projectUniqueName": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj",
         "projectName": "Event(API)",
-        "projectPath": "C:\\Users\\kuc\\Source\\Repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj",
+        "projectPath": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj",
         "packagesPath": "C:\\Users\\kuc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kuc\\Source\\Repos\\TodayEvent\\API\\Event(API)\\Event(API)\\obj\\",
+        "outputPath": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kuc\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,20 +1,18 @@
 ﻿using Event_API_.Data;
 using Event_API_.Model;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Event_API_.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GenresController : ControllerBase
+    public class CategoryController : ControllerBase
     {
 
-        private readonly ILogger<GenresController> logger;
+        private readonly ILogger<CategoryController> logger;
         private readonly DataContext _dataContext;
 
-        public GenresController(ILogger<GenresController> logger,
+        public CategoryController(ILogger<CategoryController> logger,
             DataContext dataContext)
         {
             this.logger = logger;
@@ -25,7 +23,7 @@ namespace Event_API_.Controllers
 
         public async Task<ActionResult<List<Category>>> Get()
         {
-            logger.LogInformation("Getting all the genres");
+            logger.LogInformation("Getting all the categories");
             return await _dataContext.Categories.ToListAsync();
 
         }
@@ -40,13 +38,12 @@ namespace Event_API_.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] Category category)
         {
-            _dataContext.Add(category);                   // add in memory
-            await _dataContext.SaveChangesAsync(); //save
-            return NoContent();
+            throw new NotImplementedException();
+
         }
 
         [HttpPut]
-        public ActionResult Put([FromBody] Category genre)
+        public ActionResult Put([FromBody] Category category)
         {
 
             throw new NotImplementedException();

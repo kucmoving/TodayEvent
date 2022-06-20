@@ -33,8 +33,7 @@ import { MapComponent } from './items/map/map.component';
 import { FormEventComponent } from './events/form-event/form-event.component';
 import { MultipleSelectorComponent } from './items/multiple-selector/multiple-selector.component';
 import { HolderAutocompleteComponent } from './holders/holder-autocomplete/holder-autocomplete.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -66,6 +65,7 @@ import { HolderAutocompleteComponent } from './holders/holder-autocomplete/holde
     MultipleSelectorComponent,
     HolderAutocompleteComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -75,7 +75,8 @@ import { HolderAutocompleteComponent } from './holders/holder-autocomplete/holde
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    LeafletModule
+    LeafletModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

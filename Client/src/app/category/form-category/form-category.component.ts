@@ -15,7 +15,9 @@ export class FormCategoryComponent implements OnInit {
   model:any;
 
   form:any = FormGroup;
-  @Output() onSaveChanges = new EventEmitter<newCategoryDTO>();
+
+  @Output()
+  onSaveChanges: EventEmitter<newCategoryDTO> = new EventEmitter<newCategoryDTO>();
 
 
   ngOnInit(): void {

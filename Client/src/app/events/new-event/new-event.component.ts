@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { newEventLocationDTO } from 'src/app/_model/newEventLocationDTO';
+import { Router } from '@angular/router';
+import { CategoryService } from 'src/app/category/category.service';
+import { newCategoryDTO } from 'src/app/_model/newCategoryDTO';
 
 @Component({
   selector: 'app-new-event',
@@ -8,13 +10,14 @@ import { newEventLocationDTO } from 'src/app/_model/newEventLocationDTO';
 })
 export class NewEventComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
   }
-  saveChanges(eventLocation:any){
-    console.log(eventLocation);
+
+  saveChanges(newCategoryDTO: newCategoryDTO){
+    this.categoryService.post(newCategoryDTO).subscribe(()=>{
+      this.router.navigate(['/category']);
+    }, error => console.error(error));
   }
-
-
 }
