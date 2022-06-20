@@ -1,6 +1,9 @@
-﻿using Event_API_.Data;
+﻿using AutoMapper;
+using Event_API_.Data;
+using Event_API_.DTOs;
 using Event_API_.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Event_API_.Controllers
 {
@@ -8,51 +11,69 @@ namespace Event_API_.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-
-        private readonly ILogger<CategoryController> logger;
+        private readonly ILogger<CategoryController> _logger;
         private readonly DataContext _dataContext;
+        private readonly IMapper _mapper;
 
         public CategoryController(ILogger<CategoryController> logger,
-            DataContext dataContext)
+            DataContext dataContext, IMapper mapper)
         {
-            this.logger = logger;
+            _logger = logger;
             _dataContext = dataContext;
+            _mapper = mapper;
         }
 
         [HttpGet]
-
-        public async Task<ActionResult<List<Category>>> Get()
+        public async Task<ActionResult<List<CategoryDto>>> Get()
         {
-            logger.LogInformation("Getting all the categories");
-            return await _dataContext.Categories.ToListAsync();
+            _logger.LogInformation("Getting all the categories");
+            var category = await _dataContext.Categories.OrderBy(x => x.Name).ToListAsync();
+            return _mapper.Map<List<CategoryDto>>(category);
 
         }
 
-        [HttpGet("{Id:int}", Name = "getCategory")] // api/genres/example
-        public ActionResult<Category> Get(int Id)
+        [HttpGet("{Id:int}", Name = "getCategory")] // api/category/example
+        public async Task<ActionResult<CategoryDto>> Get(int Id)
         {
-            throw new NotImplementedException();
-
+            var category = await _dataContext.Categories.FirstOrDefaultAsync(x => x.Id == Id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return _mapper.Map<CategoryDto>(category);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] Category category)
+        public async Task<ActionResult> Post([FromBody] NewCategoryDTO newCategoryDTO)
         {
-            throw new NotImplementedException();
-
+            var category = _mapper.Map<Category>(newCategoryDTO);
+            _dataContext.Add(category);
+            await _dataContext.SaveChangesAsync();
+            return NoContent();
         }
 
-        [HttpPut]
-        public ActionResult Put([FromBody] Category category)
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Put(int id, [FromBody] NewCategoryDTO newCategoryDTO)
         {
-
-            throw new NotImplementedException();
+            var category = _mapper.Map<Category>(newCategoryDTO);
+            category.Id = id;
+            _dataContext.Entry(category).State = EntityState.Modified; //if already exist, then modify
+            await _dataContext.SaveChangesAsync();
+            return NoContent();
         }
 
-        [HttpDelete]
-        public ActionResult Delete()
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int Id)
         {
-            throw new NotImplementedException();
+            var category = await _dataContext.Categories.FirstOrDefaultAsync(x => x.Id == Id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            _dataContext.Remove(category);
+            await _dataContext.SaveChangesAsync();
+            return NoContent();
 
         }
     }

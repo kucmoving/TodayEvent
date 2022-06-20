@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { parseWebAPIErrors } from 'src/app/items/input-img/utils';
 import { newCategoryDTO } from 'src/app/_model/newCategoryDTO';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-new-category',
@@ -9,13 +11,16 @@ import { newCategoryDTO } from 'src/app/_model/newCategoryDTO';
 })
 export class NewCategoryComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  errors: string[]=[];
+
+  constructor(private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
   }
 
   saveChanges(newCategoryDTO: newCategoryDTO){
-    console.log(newCategoryDTO);
-    this.router.navigate(['/category']);
+    this.categoryService.post(newCategoryDTO).subscribe(()=>{
+      this.router.navigate(['/category']);
+    }, error => this.errors = parseWebAPIErrors(error));
   }
 }

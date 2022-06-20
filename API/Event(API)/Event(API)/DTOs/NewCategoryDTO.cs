@@ -1,11 +1,10 @@
 ﻿using Event_API_.Validation;
 using System.ComponentModel.DataAnnotations;
 
-namespace Event_API_.Model
+namespace Event_API_.DTOs
 {
-    public class Category
+    public class NewCategoryDTO
     {
-        public int Id { get; set; }
         [Required(ErrorMessage = "The field with name {0} is required")]
         [StringLength(10)]
         [FirstLetterUppercase]

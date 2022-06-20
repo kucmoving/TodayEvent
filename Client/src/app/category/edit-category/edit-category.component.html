@@ -1,5 +1,8 @@
 <h2>edit category</h2>
 
+<!--if there is model here-->
+<app-form-category *ngIf="model"
+[model]="model" (onSaveChanges)="saveChanges($event)"></app-form-category>
 
-<app-form-category [model]="model" (onSaveChanges)="saveChanges()"></app-form-category>
-
+<!--if there is no model here-->
+<mat-spinner *ngIf="!model"></mat-spinner>

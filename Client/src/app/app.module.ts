@@ -34,6 +34,8 @@ import { FormEventComponent } from './events/form-event/form-event.component';
 import { MultipleSelectorComponent } from './items/multiple-selector/multiple-selector.component';
 import { HolderAutocompleteComponent } from './holders/holder-autocomplete/holder-autocomplete.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DisplayErrorComponent } from './items/display-error/display-error.component';
+
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormEventComponent,
     MultipleSelectorComponent,
     HolderAutocompleteComponent,
+    DisplayErrorComponent,
 
 
   ],
@@ -76,7 +79,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     LeafletModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

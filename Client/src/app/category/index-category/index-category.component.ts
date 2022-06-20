@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { categoryDTO } from 'src/app/_model/newCategoryDTO';
 import { CategoryService } from '../category.service';
 
 @Component({
@@ -8,11 +9,27 @@ import { CategoryService } from '../category.service';
 })
 export class IndexCategoryComponent implements OnInit {
 
+  category: categoryDTO[]=[];
+  columnsToDisplay = ['name', 'actions'];
+
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    this.loadCategory();
+
+  }
+
+  loadCategory(){
     this.categoryService.getAll().subscribe(category => {
-      console.log(category);
+      this.category = category;
+      console.log(this.category);
+    });
+  }
+
+  delete(id: number){
+    this.categoryService.delete(id)
+    .subscribe(()=>{
+      this.loadCategory();
     })
   }
 }
