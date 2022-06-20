@@ -32,7 +32,8 @@ import { LeafletModule} from '@asymmetrik/ngx-leaflet'
 import { MapComponent } from './items/map/map.component';
 import { FormEventComponent } from './events/form-event/form-event.component';
 import { MultipleSelectorComponent } from './items/multiple-selector/multiple-selector.component';
-import { HolderAutocompleteComponent } from './holder/holder-autocomplete/holder-autocomplete.component';
+import { HolderAutocompleteComponent } from './holders/holder-autocomplete/holder-autocomplete.component';
+
 
 
 @NgModule({

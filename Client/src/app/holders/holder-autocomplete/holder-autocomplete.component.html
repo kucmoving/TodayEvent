@@ -1,0 +1,16 @@
+<form>
+  <mat-form-field>
+      <input type="text"
+      placeholder="Select the holder"
+      matInput [formControl]="control"
+      [matAutocomplete]="auto"
+      />
+  </mat-form-field>
+  <mat-autocomplete #auto
+  (optionSelected)="optionSelected($event)"
+>
+    <mat-option *ngFor="let holder of holders" [value]="holder">
+      <img [src]="holder.picture" />  {{holder.name}}
+    </mat-option>
+  </mat-autocomplete>
+</form>
