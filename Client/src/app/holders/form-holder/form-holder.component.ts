@@ -35,7 +35,7 @@ export class FormHolderComponent implements OnInit {
     this.form.get('picture').setValue(image);
   }
 
-  onSaveChange(content: any){
+  changeMarkDown(content: any){
     this.form.get("introduction").setValue(content);
   }
 

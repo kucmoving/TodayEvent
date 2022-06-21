@@ -1,6 +1,6 @@
 ﻿namespace Event_API_.DTOs
 {
-    public class CategoryDto
+    public class CategoryDTO
     {
         public int Id { get; set; }
 

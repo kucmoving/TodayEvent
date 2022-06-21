@@ -24,23 +24,23 @@ namespace Event_API_.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<CategoryDto>>> Get()
+        public async Task<ActionResult<List<CategoryDTO>>> Get()
         {
             _logger.LogInformation("Getting all the categories");
             var category = await _dataContext.Categories.OrderBy(x => x.Name).ToListAsync();
-            return _mapper.Map<List<CategoryDto>>(category);
+            return _mapper.Map<List<CategoryDTO>>(category);
 
         }
 
         [HttpGet("{Id:int}", Name = "getCategory")] // api/category/example
-        public async Task<ActionResult<CategoryDto>> Get(int Id)
+        public async Task<ActionResult<CategoryDTO>> Get(int Id)
         {
             var category = await _dataContext.Categories.FirstOrDefaultAsync(x => x.Id == Id);
             if (category == null)
             {
                 return NotFound();
             }
-            return _mapper.Map<CategoryDto>(category);
+            return _mapper.Map<CategoryDTO>(category);
         }
 
         [HttpPost]
