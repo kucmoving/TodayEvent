@@ -20,4 +20,17 @@ export class EventLocationService {
   post(eventLocation: newEventLocationDTO){
     return this.http.post(this.apiURL, eventLocation);
   }
+
+  getById(id: number): Observable<eventLocationDTO>{
+    return this.http.get<eventLocationDTO>(this.apiURL + id);
+  }
+  put(id: number, eventLocation: newEventLocationDTO) {
+    return this.http.put(this.apiURL + id, eventLocation);
+  }
+
+  delete(id: number) {
+    return this.http.delete(this.apiURL + id);
+  }
 }
+
+

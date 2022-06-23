@@ -14,7 +14,15 @@ export class IndexEventLocationComponent implements OnInit {
   displayColumns =['name', 'actions'];
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(){
     this.eventLocationService.get().subscribe(eventLocation =>
       this.eventLocation = eventLocation);
+  }
+
+  delete(id:number){
+    this.eventLocationService.delete(id).subscribe(() => this.loadData());
   }
 }

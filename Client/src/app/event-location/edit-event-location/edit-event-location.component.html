@@ -2,4 +2,5 @@
 
 <H2>edit event location</H2>
 
-<app-location-form [model]="model" (onSaveChanges)="saveChanges($event)"></app-location-form>
+<app-location-form *ngIf="model" [model]="model"
+(onSaveChanges)="saveChanges($event)"></app-location-form>

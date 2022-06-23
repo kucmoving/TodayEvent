@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { newEventLocationDTO } from 'src/app/_model/newEventLocationDTO';
+import { EventLocationService } from '../event-location.service';
 
 @Component({
   selector: 'app-edit-event-location',
@@ -9,16 +10,21 @@ import { newEventLocationDTO } from 'src/app/_model/newEventLocationDTO';
 })
 export class EditEventLocationComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private eventLocationService:EventLocationService,
+    private router: Router) { }
 
-  model: newEventLocationDTO = {name:"Victoria Park", latitude:51.53901520382994, longitude:-0.034933090209960944};
+  model: any;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-
+      this.eventLocationService.getById(params.id).subscribe(eventLocation =>
+        this.model =eventLocation);
     })
   }
-  saveChanges(movieTheater: any){
-
+  saveChanges(newEventLocationDTO: newEventLocationDTO){
+    this.eventLocationService.put(this.model.id, newEventLocationDTO).subscribe(()=>{
+      this.router.navigate(['/eventlocation']);
+    })
   }
 }
