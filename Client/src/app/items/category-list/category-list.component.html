@@ -9,7 +9,7 @@
     </span>
 </div>
 
-<div *ngif="list.length === 0">
+<div *ngif="list?.length === 0">
   <span #empty>
     <ng-content select="[empty]"></ng-content>
     </span>

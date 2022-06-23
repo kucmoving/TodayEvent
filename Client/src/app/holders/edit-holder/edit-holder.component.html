@@ -1,3 +1,8 @@
 <p>edit-holder works!</p>
 
-<app-form-holder [model]="model" (save)="save($event)"></app-form-holder>
+
+
+<app-form-holder *ngIf="model" [model]="model"
+(onSaveChanges)="saveChanges($event)"></app-form-holder>
+
+<mat-spinner *ngIf="!model"></mat-spinner>

@@ -25,9 +25,12 @@ namespace Event_API_.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<HolderDTO>>> Get()
+        public async Task<ActionResult<List<HolderDTO>>> Get([FromQuery] PaginationDTO paginationDTO)
         {
-            var holders = await _dataContext.Holders.OrderBy(x => x.Name).ToListAsync();
+            var queryable = _dataContext.Holders.AsQueryable();
+            await HttpContext.InsertParametersPaginationInHeader(queryable);
+            var holders = await _dataContext.Holders.OrderBy(x => x.Name)
+                .Paginate(paginationDTO).ToListAsync();
             return _mapper.Map<List<HolderDTO>>(holders);
 
         }
@@ -58,11 +61,18 @@ namespace Event_API_.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id, [FromBody] NewHolderDTO newHolderDTO)
+        public async Task<ActionResult> Put(int id, [FromForm] NewHolderDTO newHolderDTO)
         {
-            var holder = _mapper.Map<Holder>(newHolderDTO);
-            holder.Id = id;
-            _dataContext.Entry(holder).State = EntityState.Modified; //if already exist, then modify
+            var holder = await _dataContext.Holders.FirstOrDefaultAsync(x => x.Id == id);
+            if (holder == null)
+            {
+                return NotFound();
+            }
+            holder = _mapper.Map(newHolderDTO, holder);
+            if(newHolderDTO.Picture != null)
+            {
+                holder.Picture = await _fileStorageService.EditFile("holder", newHolderDTO.Picture, holder.Picture);
+            }
             await _dataContext.SaveChangesAsync();
             return NoContent();
         }
@@ -78,6 +88,8 @@ namespace Event_API_.Controllers
             }
             _dataContext.Remove(holder);
             await _dataContext.SaveChangesAsync();
+            await _fileStorageService.DeleteFile(holder.Picture, "holder");  //del person , picture will del 
+
             return NoContent();
 
         }

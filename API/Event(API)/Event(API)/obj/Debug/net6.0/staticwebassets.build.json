@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fjbFWKX3ljjRbB0lMIUsGpGW0MFMG9Mehls22pZbPVA=",
+  "Hash": "PgwToRZliehbKlvkh5h3qOEazldyv+RV3f/xBlyB4uk=",
   "Source": "Event(API)",
   "BasePath": "_content/Event(API)",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\holder\\c8d65e07-f700-45a1-95d7-5b097643b969.png",
+      "Identity": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\holder\\5a2fc0e9-56fb-41bf-9cc6-536e595f10ce.png",
       "SourceId": "Event(API)",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\",
       "BasePath": "_content/Event(API)",
-      "RelativePath": "holder/c8d65e07-f700-45a1-95d7-5b097643b969.png",
+      "RelativePath": "holder/5a2fc0e9-56fb-41bf-9cc6-536e595f10ce.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,7 +31,58 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\holder\\c8d65e07-f700-45a1-95d7-5b097643b969.png"
+      "OriginalItemSpec": "wwwroot\\holder\\5a2fc0e9-56fb-41bf-9cc6-536e595f10ce.png"
+    },
+    {
+      "Identity": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\holder\\c4f18e79-070f-49aa-afc8-3b644401b86a.png",
+      "SourceId": "Event(API)",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\",
+      "BasePath": "_content/Event(API)",
+      "RelativePath": "holder/c4f18e79-070f-49aa-afc8-3b644401b86a.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\holder\\c4f18e79-070f-49aa-afc8-3b644401b86a.png"
+    },
+    {
+      "Identity": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\holder\\c918abd0-f6ca-4d81-a9d5-5e225ff188da.png",
+      "SourceId": "Event(API)",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\",
+      "BasePath": "_content/Event(API)",
+      "RelativePath": "holder/c918abd0-f6ca-4d81-a9d5-5e225ff188da.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\holder\\c918abd0-f6ca-4d81-a9d5-5e225ff188da.png"
+    },
+    {
+      "Identity": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\holder\\d6aeb879-249c-408b-8c0c-22b45f3d41e5.png",
+      "SourceId": "Event(API)",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\",
+      "BasePath": "_content/Event(API)",
+      "RelativePath": "holder/d6aeb879-249c-408b-8c0c-22b45f3d41e5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\holder\\d6aeb879-249c-408b-8c0c-22b45f3d41e5.png"
     }
   ]
 }

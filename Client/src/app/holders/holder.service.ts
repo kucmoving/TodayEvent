@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { formatDateFormData } from '../items/input-img/utils';
@@ -14,14 +15,31 @@ export class HolderService {
 
   private apiURL = environment.apiURL + 'holder/'
 
-  get(): Observable<holderDTO[]>{
-    return this.http.get<holderDTO[]>(this.apiURL);
+  get(page: any, recordsPerPage: any): Observable<any>{
+    let params = new HttpParams();
+    params = params.append('page', page.toString());
+    params = params.append('recordsPerPage', recordsPerPage.toString());
+    return this.http.get<any>(this.apiURL, {observe: 'response', params});
+  }
+
+  getById(id: number): Observable<any>{
+    return this.http.get<any>(this.apiURL + id);
   }
 
   post(holder:newHolderDTO){
     const formData = this.buildFormData(holder);
     return this.http.post(this.apiURL, formData);
   }
+
+  edit(id:number, holder:newHolderDTO){
+    const formData = this.buildFormData(holder);
+    return this.http.put(this.apiURL + id, formData);
+  }
+
+  delete(id:number){
+    return this.http.delete(this.apiURL + id);
+  }
+
 
 
   // to organize formdata

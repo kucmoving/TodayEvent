@@ -11,5 +11,7 @@ namespace Event_API_.Data
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Holder> Holders { get; set; }
+
+        public DbSet<EventLocation> EventLocations { get; set; }
     }
 }

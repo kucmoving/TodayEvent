@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { newHolderDTO } from 'src/app/_model/newHolderDTO';
+import { HolderService } from '../holder.service';
 
 @Component({
   selector: 'app-edit-holder',
@@ -7,21 +9,26 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-holder.component.css']
 })
 export class EditHolderComponent implements OnInit {
+  constructor(private activatedRoute: ActivatedRoute,
+    private holderService: HolderService, private router: Router) { }
 
-  model: any = {name: "SPCA",
-  startingDate: new Date(),
-picture:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/SPCA.jpg/440px-SPCA.jpg"}
-
-  constructor(private activatedRoute: ActivatedRoute) { }
-
+  model: any;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-
+      this.holderService.getById(params.id).subscribe(holder => this.model = holder);
     })
   }
-
-    save(holderChange:any){
+  save(holderChange:any){
     console.log(holderChange);
+  }
+
+
+
+  saveChanges(newHolderDTO: newHolderDTO){
+    console.log(newHolderDTO);
+    this.holderService.edit(this.model.id, newHolderDTO).subscribe(()=>{
+      this.router.navigate(['/holder']);
+    });
   }
 
 }

@@ -125,3 +125,7 @@ C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\obj\Debug\net6.0\
 C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\Event(API).staticwebassets.runtime.json
+C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\NetTopologySuite.dll
+C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
+C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs

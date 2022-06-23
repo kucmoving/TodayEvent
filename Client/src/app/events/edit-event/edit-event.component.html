@@ -1,3 +1,8 @@
+
 <h2>Edit Event Location</h2>
 
-<app-form-event [model]="model" (saveChanges)="onSaveChanges($event)"></app-form-event>
+<app-location-form
+*ngIf="model"
+[model]="model" (onSaveChanges)="saveChanges($event)"></app-location-form>
+
+<mat-spinner *ngIf="!model"></mat-spinner>
