@@ -1,3 +1,31 @@
-<h2>Holder</h2>
+<h2>Holders</h2>
 
-<button mat-flat-button color="primary" routerLink="/holder/new">New Holder</button>
+<button mat-flat-button color="primary" routerLink="/holder/new">Create new</button>
+
+<app-category-list [list]="holders">
+    <ng-container content>
+        <table mat-table [dataSource]="holders" class="mat-elevation-z8 table-index">
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">{{element.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef>Actions</th>
+                <td mat-cell *matCellDef="let element">
+                    <a
+                        routerLink="/holder/edit/{{element.id}}"
+                        mat-flat-button color="primary"
+                    >
+                    Edit
+                  </a>
+                  <button mat-flat-button color="warn" (click)="delete(element.id)">
+                      Delete
+                  </button>
+              </td>
+          </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+        </table>
+
+    </ng-container>
+</app-category-list>

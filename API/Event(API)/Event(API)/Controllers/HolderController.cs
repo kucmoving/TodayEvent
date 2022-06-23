@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
 using Event_API_.Data;
 using Event_API_.DTOs;
+using Event_API_.Helpers;
 using Event_API_.Model;
-using Microsoft.AspNetCore.Http;
+using Event_API_.wwwroot;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,11 +15,13 @@ namespace Event_API_.Controllers
     {
         private readonly DataContext _dataContext;
         private readonly IMapper _mapper;
+        private readonly IFileStorageService _fileStorageService;
 
-        public HolderController(DataContext dataContext, IMapper mapper)
+        public HolderController(DataContext dataContext, IMapper mapper, IFileStorageService fileStorageService)
         {
             _dataContext = dataContext;
             _mapper = mapper;
+            _fileStorageService = fileStorageService;
         }
 
         [HttpGet]
@@ -41,11 +44,17 @@ namespace Event_API_.Controllers
         }
 
 
-            [HttpPost]
-            public async Task<ActionResult> Post([FromForm] NewHolderDTO newHolderDTO)
+         [HttpPost]
+         public async Task<ActionResult> Post([FromForm] NewHolderDTO newHolderDTO)
+        {
+            var holder = _mapper.Map<Holder>(newHolderDTO);
+            if (newHolderDTO.Picture != null)
             {
+                holder.Picture = await _fileStorageService.SaveFile("holder", newHolderDTO.Picture);
+            }
+            _dataContext.Add(holder);
+            await _dataContext.SaveChangesAsync();
             return NoContent();
-            throw new NotImplementedException();
         }
 
         [HttpPut("{id:int}")]

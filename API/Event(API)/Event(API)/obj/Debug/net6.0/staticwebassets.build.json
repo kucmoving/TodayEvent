@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "/PTLRiGRhxMYVLYgu9MyHOP15iPqvafnB2qE4ochn3c=",
+  "Hash": "fjbFWKX3ljjRbB0lMIUsGpGW0MFMG9Mehls22pZbPVA=",
   "Source": "Event(API)",
   "BasePath": "_content/Event(API)",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Event(API)\\wwwroot",
+      "Source": "Event(API)",
+      "ContentRoot": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\",
+      "BasePath": "_content/Event(API)",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\holder\\c8d65e07-f700-45a1-95d7-5b097643b969.png",
+      "SourceId": "Event(API)",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\wwwroot\\",
+      "BasePath": "_content/Event(API)",
+      "RelativePath": "holder/c8d65e07-f700-45a1-95d7-5b097643b969.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\holder\\c8d65e07-f700-45a1-95d7-5b097643b969.png"
+    }
+  ]
 }

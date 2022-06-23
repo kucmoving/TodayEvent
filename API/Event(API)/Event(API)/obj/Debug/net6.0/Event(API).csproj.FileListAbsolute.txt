@@ -124,3 +124,4 @@ C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\obj\Debug\net6.0\
 C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\obj\Debug\net6.0\ref\Event(API).dll
 C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\kuc\source\repos\TodayEvent\API\Event(API)\Event(API)\bin\Debug\net6.0\Event(API).staticwebassets.runtime.json

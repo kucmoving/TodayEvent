@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { holderDTO } from 'src/app/_model/newHolderDTO';
+import { HolderService } from '../holder.service';
 
 @Component({
   selector: 'app-index-holders',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexHoldersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private holderService: HolderService) { }
+  holders: any;
+  columnsToDisplay=["name", "actions"];
+
 
   ngOnInit(): void {
+    this.holderService.get().subscribe((holders: holderDTO[]) =>{
+      this.holders = holders;
+    })
   }
 
 }

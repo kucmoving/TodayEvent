@@ -9,7 +9,7 @@ namespace Event_API_.DTOs
         public string Name { get; set; }
 
         public DateTime StartingDate { get; set; }
-        public string Introduction { get; set; }
+        public string? Introduction { get; set; }
         public IFormFile Picture { get; set; }
     }
 }

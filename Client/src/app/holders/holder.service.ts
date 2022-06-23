@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { formatDateFormData } from '../items/input-img/utils';
-import { newHolderDTO } from '../_model/newHolderDTO';
+import { holderDTO, newHolderDTO } from '../_model/newHolderDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class HolderService {
   constructor(private http: HttpClient) { }
 
   private apiURL = environment.apiURL + 'holder/'
+
+  get(): Observable<holderDTO[]>{
+    return this.http.get<holderDTO[]>(this.apiURL);
+  }
 
   post(holder:newHolderDTO){
     const formData = this.buildFormData(holder);

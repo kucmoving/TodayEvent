@@ -24,7 +24,7 @@ export class FormHolderComponent implements OnInit {
       }],
       startingDate:'',
       picture:'',
-      introduction:''
+      introduction:'',validators: [Validators.required]
     });
     if (this.model !== undefined){
       this.form.patchValue(this.model);
@@ -35,7 +35,7 @@ export class FormHolderComponent implements OnInit {
     this.form.get('picture').setValue(image);
   }
 
-  changeMarkDown(content: any){
+  changeMarkDown(content: string){
     this.form.get("introduction").setValue(content);
   }
 
