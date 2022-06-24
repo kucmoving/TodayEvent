@@ -15,6 +15,7 @@ export class IndexEventLocationComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData();
+
   }
 
   loadData(){

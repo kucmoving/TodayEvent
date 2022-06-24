@@ -14,10 +14,10 @@ export class EditEventComponent implements OnInit {
   model: eventDTO = {
     title: 'Concert Summer',
     confirm: true,
-    summary: "test",
+    introduction: "test",
     startingDate: new Date(),
     video: 'ABCDE',
-    poster: 'https://miro.medium.com/max/700/1*ydhn1QPAKsrbt6UWfn3YnA.jpeg'}
+    picture: 'https://miro.medium.com/max/700/1*ydhn1QPAKsrbt6UWfn3YnA.jpeg'}
 
     ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {

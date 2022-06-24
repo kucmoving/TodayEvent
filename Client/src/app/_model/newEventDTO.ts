@@ -1,21 +1,23 @@
 import { categoryDTO } from "./newCategoryDTO";
 import { eventLocationDTO } from "./newEventLocationDTO";
+import { holderEventDTO } from "./newHolderDTO";
 
 export interface newEventDTO {
   title: string;
-  summary: string;
-  poster: File;
+  introduction: string;
+  picture: File;
   confirm: boolean;
   startingDate: Date;
   video: string;
   categoryIds: number[];
   eventLocationIds: number[];
+  holders: holderEventDTO[];
 }
 
 export interface eventDTO {
   title: string;
-  summary: string;
-  poster: string;
+  introduction: string;
+  picture: string;
   confirm: boolean;
   startingDate: Date;
   video: string;

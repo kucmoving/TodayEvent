@@ -93,8 +93,26 @@ namespace Event_API_.Controllers
             return NoContent();
 
         }
+        [HttpPost("searchByName")]
+        public async Task<ActionResult<List<HolderEventDTO>>> SearchByName([FromBody]string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return new List<HolderEventDTO>();
+            }
+            return await _dataContext.Holders
+                .Where(x => x.Name.Contains(name))
+                .OrderBy(x => x.Name)
+                .Select(x => new HolderEventDTO
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Picture = x.Picture
+                })
+                .Take(5)
+                .ToListAsync();
+            }
+        }
     }
 
-
-}
 

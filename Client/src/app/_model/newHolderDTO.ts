@@ -2,7 +2,7 @@ export interface newHolderDTO {
   name: string;
   startingDate: Date;
   picture: File;
-  Introduction: string;
+  introduction: string;
 }
 
 export interface holderDTO {
@@ -13,9 +13,10 @@ export interface holderDTO {
   Introduction: string;
 }
 
-export interface holderEventDto{
+export interface holderEventDTO{
   id: number;
   name: string;
   contactperson:string;
   picture:string;
 }
+

@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { multiSelector } from 'src/app/_model/multiSelector';
 import { newEventDTO } from 'src/app/_model/newEventDTO';
+import { holderEventDTO } from 'src/app/_model/newHolderDTO';
 
 
 @Component({
@@ -20,12 +22,17 @@ export class FormEventComponent implements OnInit {
 
 
   @Input()
-  nonSelectedCategory : any[] = [];
-  selectedCategory : any[] = [];
+  nonSelectedCategory : multiSelector[] = [];
+  @Input()
+  selectedCategory : multiSelector[] = [];
 
   @Input()
-  nonSelectedEventLocation: any[] = [];
-  selectedEventLocation: any[] = [];
+  nonSelectedEventLocation: multiSelector[] = [];
+  @Input()
+  selectedEventLocation: multiSelector[] = [];
+
+  @Input()
+  selectedHolders : holderEventDTO[]=[];
 
 
   form:any = FormGroup
@@ -41,7 +48,8 @@ export class FormEventComponent implements OnInit {
       startingDate: '',
       poster: '',
       categoryIds: '',
-      eventLocationIds: ''
+      eventLocationIds: '',
+      holders:''
     });
 
     if (this.model !== undefined){
@@ -50,7 +58,7 @@ export class FormEventComponent implements OnInit {
   }
 
   onImageSelected(file:any){
-    this.form.get('poster').setValue(file);
+    this.form.get('picture').setValue(file);
   }
 
   saveChanges(){
@@ -59,6 +67,11 @@ export class FormEventComponent implements OnInit {
 
     const eventLocationIds = this.selectedEventLocation.map(value => value.key); // eventLocationIds, receive the key
     this.form.get('eventLocationIds').setValue(eventLocationIds); //form set value
+
+    const holders = this.selectedHolders.map(value => {
+      return {id: value.id, contactperson: value.contactperson}
+    });
+    this.form.get('holders').setValue(holders);
 
     this.onSaveChanges.emit(this.form.value); //to emit
   }

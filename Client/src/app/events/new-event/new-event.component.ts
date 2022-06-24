@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { multiSelector } from 'src/app/_model/multiSelector';
 import { newCategoryDTO } from 'src/app/_model/newCategoryDTO';
+import { newEventDTO } from 'src/app/_model/newEventDTO';
 import { EventsService } from '../events.service';
 
 @Component({
@@ -27,6 +28,10 @@ export class NewEventComponent implements OnInit {
     })
   }
 
-  saveChanges(){
+  saveChanges(newEventDTO: newEventDTO){
+    console.log(newEventDTO);
+    this.eventService.post(newEventDTO).subscribe(id => {
+      this.router.navigate(['/movie/' + id]);
+    })
   }
 }

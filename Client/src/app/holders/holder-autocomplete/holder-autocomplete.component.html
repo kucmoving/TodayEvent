@@ -9,7 +9,7 @@
   <mat-autocomplete #auto
   (optionSelected)="optionSelected($event)"
 >
-    <mat-option *ngFor="let holder of holders" [value]="holder">
+    <mat-option *ngFor="let holder of holderToDisplay" [value]="holder">
       <img [src]="holder.picture" />  {{holder.name}}
     </mat-option>
   </mat-autocomplete>
@@ -25,7 +25,7 @@
     *ngIf="selectedHolders.length > 0"
     [dataSource]="selectedHolders"
     cdkDropList
-    [cdkDropListData]="selectedActors"
+    [cdkDropListData]="selectedHolders"
     (cdkDropListDropped)="dropped($event)"
 >
 

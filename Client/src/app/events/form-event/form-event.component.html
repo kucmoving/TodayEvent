@@ -10,12 +10,12 @@
   </div>
 
   <mat-form-field appearance="outline">
-    <mat-label>Trailer</mat-label>
+    <mat-label>Video</mat-label>
     <input formControlName="video" matInput />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Release Date</mat-label>
+    <mat-label>startingDate Date</mat-label>
     <input formControlName="startingDate" matInput [matDatepicker]="picker" />
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -26,8 +26,6 @@
     [urlCurrentImage]="model?.poster"
     (onImageSelected)="onImageSelected($event)"
   ></app-input-img>
-
-  <h4>Summary</h4> <!--textarea-->
 
 
   <h4>Select the Category</h4> <!--better to use tickbox??-->
@@ -40,14 +38,16 @@
   <h4>Select the Event Location</h4>
 
 
-    <!-- <app-multiple-selector
+<app-multiple-selector
   [nonSelectedItems]="nonSelectedEventLocation"
   [selectedItems]="selectedEventLocation"
 ></app-multiple-selector>
 
   <h4>Select the Holder</h4>
 
- <app-holder-autocomplete></app-holder-autocomplete>-->
+ <app-holder-autocomplete
+
+ [selectedHolders]="selectedHolders"></app-holder-autocomplete>
 
 
 
