@@ -10,9 +10,7 @@ import { newEventDTO } from 'src/app/_model/newEventDTO';
 })
 export class FormEventComponent implements OnInit {
 
-
   constructor(private formBuilder: FormBuilder) { }
-
 
   @Input()
   model: any;
@@ -20,20 +18,13 @@ export class FormEventComponent implements OnInit {
   @Output()
   onSaveChanges = new EventEmitter<newEventDTO>();
 
-  nonSelectedCategory : any[] = [
-    {key:1, value:'Sport'},
-    {key:2, value:'Sale'},
-    {key:3, value:'Social'}
-  ]
 
+  @Input()
+  nonSelectedCategory : any[] = [];
   selectedCategory : any[] = [];
 
-  nonSelectedEventLocation: any[] = [
-    {key: 1, value: 'Victoria Park'},
-    {key: 2, value: 'Valentines Park'},
-    {key: 3, value: 'Seven King Park'},
-  ]
-
+  @Input()
+  nonSelectedEventLocation: any[] = [];
   selectedEventLocation: any[] = [];
 
 

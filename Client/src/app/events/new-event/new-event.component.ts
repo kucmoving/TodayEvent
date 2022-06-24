@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CategoryService } from 'src/app/category/category.service';
+import { multiSelector } from 'src/app/_model/multiSelector';
 import { newCategoryDTO } from 'src/app/_model/newCategoryDTO';
+import { EventsService } from '../events.service';
 
 @Component({
   selector: 'app-new-event',
@@ -10,14 +11,22 @@ import { newCategoryDTO } from 'src/app/_model/newCategoryDTO';
 })
 export class NewEventComponent implements OnInit {
 
-  constructor(private router: Router, private categoryService: CategoryService) { }
+  constructor(private router: Router, private eventService: EventsService) { }
+
+  nonSelectedCategory: multiSelector[]=[];
+  nonSelectedEventLocation: multiSelector[]=[];
 
   ngOnInit(): void {
+    this.eventService.postGet().subscribe(response =>{
+      this.nonSelectedCategory = response.category.map(category =>{
+        return <multiSelector>{key: category.id, value: category.name}
+      });
+      this.nonSelectedEventLocation = response.eventLocation.map(eventLocation =>{
+        return <multiSelector>{key:eventLocation.id, value:eventLocation.name}
+      });
+    })
   }
 
-  saveChanges(newCategoryDTO: newCategoryDTO){
-    this.categoryService.post(newCategoryDTO).subscribe(()=>{
-      this.router.navigate(['/category']);
-    }, error => console.error(error));
+  saveChanges(){
   }
 }

@@ -1,3 +1,6 @@
+import { categoryDTO } from "./newCategoryDTO";
+import { eventLocationDTO } from "./newEventLocationDTO";
+
 export interface newEventDTO {
   title: string;
   summary: string;
@@ -17,3 +20,10 @@ export interface eventDTO {
   startingDate: Date;
   video: string;
 }
+
+export interface EventPOstGetDTO{
+  category: categoryDTO[];
+  eventLocation: eventLocationDTO[];
+}
+
+

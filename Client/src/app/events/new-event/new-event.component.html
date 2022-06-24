@@ -1,2 +1,7 @@
+<app-form-event
+*ngIf="nonSelectedCategory"
+[nonSelectedCategory]="nonSelectedCategory"
+[nonSelectedEventLocation]="nonSelectedEventLocation"
+(onSaveChanges)="saveChanges($event)"></app-form-event>
 
-<app-form-category (onSaveChanges)="saveChanges($event)"></app-form-category>
+<mat-spinner *ngIf="!nonSelectedCategory"></mat-spinner>

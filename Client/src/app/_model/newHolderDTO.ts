@@ -12,3 +12,10 @@ export interface holderDTO {
   picture: string;
   Introduction: string;
 }
+
+export interface holderEventDto{
+  id: number;
+  name: string;
+  contactperson:string;
+  picture:string;
+}
