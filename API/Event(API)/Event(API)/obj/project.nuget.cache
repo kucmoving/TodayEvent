@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/zOcS553CfXz1pOobK+i8tU9MiE/0F8LrVv+z1/b3WRp5Z/ZznO3XrcJniORYwws2ENZrran3R+fEwUu981yaQ==",
+  "dgSpecHash": "m/ohazzeeJ4PBhQDTf1yDjMRofZlCYUkKBGqHqHsHBy/mA/Xk5anXiXHzAL+WAYKaS7sQwdfoQllREoRXMIjdg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kuc\\source\\repos\\TodayEvent\\API\\Event(API)\\Event(API)\\Event(API).csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\kuc\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\kuc\\.nuget\\packages\\nettopologysuite\\2.3.0\\nettopologysuite.2.3.0.nupkg.sha512",
     "C:\\Users\\kuc\\.nuget\\packages\\nettopologysuite.io.sqlserverbytes\\2.0.0\\nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512",
+    "C:\\Users\\kuc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\kuc\\.nuget\\packages\\swashbuckle.aspnetcore\\6.3.1\\swashbuckle.aspnetcore.6.3.1.nupkg.sha512",
     "C:\\Users\\kuc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
     "C:\\Users\\kuc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.1\\swashbuckle.aspnetcore.swaggergen.6.3.1.nupkg.sha512",
